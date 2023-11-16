@@ -13,7 +13,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FormSugerenciasComponent implements OnInit{
 
-    //iTiposServicios: ITiposServicios[] = [{tipoServicio:$localize`Selecciona un tipo de servicio`, codTipoServicio:"default"}];
     iTiposServicios: ITiposServicios[] = [];
     defaultTipo: ITiposServicios = <ITiposServicios> {
       tipoServicio:$localize`Selecciona un tipo de servicio`, 
@@ -29,10 +28,8 @@ export class FormSugerenciasComponent implements OnInit{
 
     sugeForm!: FormGroup;
     submitted:boolean=false;
-
     iSuge!:ISugerencia;
     
-
     constructor(private _fb: FormBuilder,private _router: Router, private _service: SugerenciasService, private _route: ActivatedRoute ){}
 
     ngOnInit(): void {
@@ -52,25 +49,23 @@ export class FormSugerenciasComponent implements OnInit{
       var temaDefault:number=-1;
 
       this._route.data.subscribe((data) => {
-        console.log(data["tipos"]);
-        
+        //console.log(data["tipos"]);
         this.iTiposServicios = data["tipos"];
         this.iTiposServicios.unshift(this.defaultTipo);
       });
 
-      this.iTemas = [this.defaultTema]
-
+      this.iTemas = [this.defaultTema];
       this.sugeForm.controls['codTipoServicio'].setValue(tipoDefault, {onlySelf:true});
       this.sugeForm.controls['nroTema'].setValue(temaDefault, {onlySelf:true});
       this.sugeForm.controls['sugerencia'].setValue("", {onlySelf:true});
     }
 
     envia():void{
-      this.submitted=true;
+      this.submitted=true; 
       console.log("Muestro datos seleccionados: ");
       console.log(this.sugeForm.value);
 
-      if(this.sugeForm.controls['codTipoServicio'].errors?.['required']  && this.sugeForm.controls['nroTema'].errors?.['required']){
+      //if(this.sugeForm.controls['codTipoServicio'].errors?.['required']  && this.sugeForm.controls['nroTema'].errors?.['required']){
         this._service.putSugerencia(this.sugeForm.value).subscribe({
           next:() =>{
             console.log("inserto sugerencia");
@@ -80,24 +75,21 @@ export class FormSugerenciasComponent implements OnInit{
           }
         });
         this._router.navigate(['exito'], { relativeTo: this._route });
-      }
+      //}
 
     }
 
     buscarTema():void{
       var temaDefault:number=-1;
-      console.log(this.sugeForm.controls['codTipoServicio'].value);
+      //console.log(this.sugeForm.controls['codTipoServicio'].value);
       let codigo:string=this.sugeForm.controls['codTipoServicio'].value;
 
-      this.iTemas = [{tema:"Selecciona un tema", codTipoServicio:"default", nroTema:-1}];
+      this.iTemas.push(this.defaultTema);
 
       if(this.sugeForm.controls['codTipoServicio'].value != "default"){
         this._service.getTemas({cod:codigo}).subscribe({
           next:(temas:ITemasTipoServicio[]) =>{
-            console.log(temas);
-          
           this.iTemas = temas;
-          
           this.iTemas.unshift(this.defaultTema);
           },
           error: (err) => {
