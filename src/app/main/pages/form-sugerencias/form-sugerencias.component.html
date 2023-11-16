@@ -1,0 +1,37 @@
+<div class="container">
+	<ng-container>
+	<h3 i18n>Nueva sugerencia</h3>
+    <form [formGroup]="sugeForm" (ngSubmit)="envia()" class="col-12">
+			<div class="row">
+				<div class="col-12 col-md-6 mb-3">
+					<label for="iservicio" i18n>Tipo de Servicio</label>
+					<select id="iservicio" size="1" class="form-select" (change)="buscarTema()" formControlName="codTipoServicio">
+						<option *ngFor="let n of iTiposServicios"  [value]="n.codTipoServicio">{{n.tipoServicio}}</option>
+					</select>
+					<div class="text-danger" *ngIf="submitted&&sugeForm.controls['codTipoServicio'].errors?.['required']">Debe informar un tipo de servicio</div>
+				</div>
+                <div class="col-12 col-md-6 mb-3">
+					<label for="itema" i18n>Tema</label>
+					<select id="itema" size="1" class="form-select" formControlName="nroTema" >
+						<option *ngFor="let t of iTemas" [value]="t.nroTema">{{t.tema}}</option>
+					</select>
+					<div class="text-danger" *ngIf="submitted&&sugeForm.controls['nroTema']?.value == -1">Debe informar un tema</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 mb-3">
+					<label for="isugerencia" i18n>Sugerencia para mejorar</label>
+					<textarea cols="50" rows="5" id="isugerencia" class="form-control" formControlName="sugerencia" i18n-placeholder placeholder="Mi sugerecia para mejorar el servicio es:"></textarea>
+					<div class="text-danger" *ngIf="submitted&&sugeForm.controls['sugerencia'].errors?.['required']">Debe informar una sugerencia</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<button type="submit" class="btn btn-success" i18n>Aceptar</button>
+					<button type="button" class="btn btn-danger ms-2" (click)="cancel()">Cancelar</button>
+				</div>
+			</div>
+		</form>
+	</ng-container>
+</div>
+

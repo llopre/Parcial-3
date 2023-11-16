@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-AR" datatype="plaintext" original="ng2.template" target-language="en">
+    <body>
+      <trans-unit id="4473277706871094860" datatype="html">
+        <source>Formulario de sugerencias</source><target state="final">Suggestion form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="768356447279701092" datatype="html">
+        <source>Datos del alumno</source><target state="final">Student's data</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6121280062403357056" datatype="html">
+        <source>Apellido</source><target state="final">Last name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3020863423205885551" datatype="html">
+        <source>Ingresa tu apellido</source><target state="final">Enter your surname</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4005903964608191769" datatype="html">
+        <source> Debes informar tu apellido </source><target state="final"> You must inform your last name </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357661269973482487" datatype="html">
+        <source>Nombre</source><target state="final">Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5677901507991545773" datatype="html">
+        <source>Ingresa tu nombre</source><target state="final">Enter your name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2245233444326113883" datatype="html">
+        <source> Debes informar tu nombre </source><target state="final"> You must inform your name </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1890300073702152532" datatype="html">
+        <source>E-mail</source><target state="final">E-mail</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2930136421748062128" datatype="html">
+        <source>Ingresa tu e-mail</source><target state="final">Enter your e-mail</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5432467327187677734" datatype="html">
+        <source><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container>"/>Debes informar tu correo<x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container>"/><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container>"/>Formato de correo no valido<x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container>"/></source><target state="final"><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container>"/>You must inform your email<x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container>"/><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container>"/>Invalid mail format<x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container>"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4987842369956299558" datatype="html">
+        <source>Sugerencias para mejorar el servicio</source><target state="final">Suggestions for service improvement</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1755383973685360450" datatype="html">
+        <source>Tipo de Servicio</source><target state="new">Service Type</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7101430002812077854" datatype="html">
+        <source>Opcion de servicio</source><target state="new">Service option</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3474538202407192363" datatype="html">
+        <source>Temas del Servicio</source><target state="final">Service Topics</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1178206343815204250" datatype="html">
+        <source>Opcion del tema</source><target state="final">Choice of topic</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7938403829236828768" datatype="html">
+        <source>Sugerencia para mejorar</source><target state="final">Suggestions for improvement</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5569470353308488934" datatype="html">
+        <source>Mi sugerecia para mejorar el servicio es:</source><target state="final">My suggestion to improve the service is:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7246810804751473294" datatype="html">
+        <source>Mostrar datos</source><target state="final">Display data</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8116504266992822229" datatype="html">
+        <source>Limpiar formulario</source><target state="final">Clear form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form-sugerencias/form-sugerencias.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
