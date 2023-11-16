@@ -4,11 +4,13 @@ import { FormSugerenciasComponent } from './pages/form-sugerencias/form-sugerenc
 import { HomeComponent } from './pages/home/home.component';
 import { tiposServiciosResolver } from './resolvers/tipos-servicios.resolver';
 import { PaginaExitoComponent } from './pages/pagina-exito/pagina-exito.component';
+import { SplashComponent } from '../core/layout/splash/splash.component';
 
 
 const routes: Routes = [
     { path: '', component: HomeComponent, children: [
-      { path: '', component: FormSugerenciasComponent, resolve:{tipos:tiposServiciosResolver} },
+      { path: '', component: SplashComponent },
+      { path: 'form', component: FormSugerenciasComponent, resolve:{tipos:tiposServiciosResolver} },
       { path: 'exito', component: PaginaExitoComponent }
     ]
     }

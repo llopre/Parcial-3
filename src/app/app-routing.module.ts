@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '**', redirectTo: '/main' }  
 ];
 
-@NgModule({
+@NgModule({ 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
