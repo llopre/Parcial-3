@@ -12,7 +12,6 @@ export class SplashComponent {
 
   ngOnInit() {
     setTimeout(() => {
-      console.log("entra al timeout");
       this._router.navigate(['form'], { relativeTo: this._route });
     }, 1500); 
   }

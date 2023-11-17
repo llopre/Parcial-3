@@ -29,6 +29,8 @@ export class FormSugerenciasComponent implements OnInit{
     sugeForm!: FormGroup;
     submitted:boolean=false;
     iSuge!:ISugerencia;
+    identificaciones:String[]=["Si", "No"];
+    tema!:String[];
     
     constructor(private _fb: FormBuilder,private _router: Router, private _service: SugerenciasService, private _route: ActivatedRoute ){}
 
@@ -37,7 +39,10 @@ export class FormSugerenciasComponent implements OnInit{
       this.sugeForm = this._fb.group({
         codTipoServicio:['', [Validators.required]],
         nroTema:[-1, [Validators.required]],
-        sugerencia:['', [Validators.required]]
+        sugerencia:['', [Validators.required]],
+        ident:['', [Validators.required]],
+        email:['', [Validators.required, Validators.email]],
+        tema:['', [Validators.required]]
       })
 
       this.cargarDatos();
@@ -47,6 +52,7 @@ export class FormSugerenciasComponent implements OnInit{
 
       var tipoDefault:String="";
       var temaDefault:number=-1;
+  
 
       this._route.data.subscribe((data) => {
         //console.log(data["tipos"]);
@@ -58,6 +64,8 @@ export class FormSugerenciasComponent implements OnInit{
       this.sugeForm.controls['codTipoServicio'].setValue(tipoDefault, {onlySelf:true});
       this.sugeForm.controls['nroTema'].setValue(temaDefault, {onlySelf:true});
       this.sugeForm.controls['sugerencia'].setValue("", {onlySelf:true});
+      this.sugeForm.controls['email'].setValue("", {onlySelf:true});
+      this.sugeForm.controls['ident'].setValue("Si", {onlySelf:true});
     }
 
     envia():void{
@@ -65,7 +73,22 @@ export class FormSugerenciasComponent implements OnInit{
       console.log("Muestro datos seleccionados: ");
       console.log(this.sugeForm.value);
 
-      //if(this.sugeForm.controls['codTipoServicio'].errors?.['required']  && this.sugeForm.controls['nroTema'].errors?.['required']){
+      var okTipoServicio = !(this.sugeForm.controls['codTipoServicio'].errors?.['required']);
+      var okTemaServicio = this.sugeForm.controls['nroTema'].value != -1;
+      var okSugerencia = !(this.sugeForm.controls['sugerencia'].errors?.['required']);
+      
+      var okcorreo = !(this.sugeForm.controls['email'].errors?.['required'] || this.sugeForm.controls['email'].errors?.['email'] );
+      var usoIdent = (this.sugeForm.controls['ident']?.value == 'Si');
+
+      var okTema = !(this.sugeForm.controls['tema'].errors?.['required']);
+      var usoOtroTema = (this.sugeForm.controls['nroTema'].value == 0);
+
+      var okNuevoTema = (okTema && usoOtroTema) || (!okTema && !usoOtroTema);
+
+      var chequeoMail = (okcorreo && usoIdent) || (!okcorreo && !usoIdent);
+
+
+      if(okTipoServicio && okTemaServicio && okSugerencia && chequeoMail &&okNuevoTema){
         this._service.putSugerencia(this.sugeForm.value).subscribe({
           next:() =>{
             console.log("inserto sugerencia");
@@ -74,8 +97,8 @@ export class FormSugerenciasComponent implements OnInit{
             throw err;
           }
         });
-        this._router.navigate(['exito'], { relativeTo: this._route });
-      //}
+        this._router.navigate(['../exito'], { relativeTo: this._route });
+      }
 
     }
 
